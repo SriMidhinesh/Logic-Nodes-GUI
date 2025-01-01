@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="file-new.svg">resources/plus-svgrepo-com.svg</file>
+    <file alias="file-open.svg">resources/icons8-open-file.svg</file>
+    <file alias="file-save.svg">resources/save-icon-svgrepo-com.svg</file>
+    <file alias="edit-copy.svg">resources/copy-svgrepo-com.svg</file>
+    <file alias="edit-cut.svg">resources/cut-svgrepo-com.svg</file>
+    <file alias="edit-paste.svg">resources/paste-svgrepo-com.svg</file>
+</qresource>
+</RCC>

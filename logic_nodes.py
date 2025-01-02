@@ -107,10 +107,6 @@ class Window(QMainWindow):
         self.nodesList.addItem(logic_xnor)
         logic_xor = QListWidgetItem(QIcon(":side-xor.svg"), "Xor")
         self.nodesList.addItem(logic_xor)
-        
-        
-        
-        
         self.sidePanel.setWidget(self.nodesList)
         self.sidePanel.setFloating(False)
         self.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, self.sidePanel)

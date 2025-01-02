@@ -6,5 +6,14 @@
     <file alias="edit-copy.svg">resources/copy-svgrepo-com.svg</file>
     <file alias="edit-cut.svg">resources/cut-svgrepo-com.svg</file>
     <file alias="edit-paste.svg">resources/paste-svgrepo-com.svg</file>
+    <file alias = "side-and.svg">resources/logic-and.svg</file>
+    <file alias = "side-xnor.svg">resources/logic-gate-xnor.svg</file>
+    <file alias = "side-xor.svg">resources/logic-gate-xor.svg</file>
+    <file alias = "side-nand.svg">resources/logic-nand.svg</file>
+    <file alias = "side-nor.svg">resources/logic-nor.svg</file>
+    <file alias = "side-not.svg">resources/logic-not.svg</file>
+    <file alias = "side-or.svg">resources/logic-or.svg</file>
+    <file alias = "side-input.svg">resources/input-svgrepo-com.svg</file>
+    <file alias = "side-output.svg">resources/file-output-svgrepo-com.svg</file>
 </qresource>
 </RCC>

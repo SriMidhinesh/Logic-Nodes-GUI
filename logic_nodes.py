@@ -1,11 +1,9 @@
 import sys
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow
-from PyQt5.QtWidgets import QMenu
-from PyQt5.QtWidgets import QToolBar
-from PyQt5.QtWidgets import QAction
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QMenu, QToolBar, QAction, QDockWidget, QListWidget, QListWidgetItem
 from PyQt5.QtGui import QIcon
+
 import qrc_resources
 
 class Window(QMainWindow):
@@ -15,12 +13,13 @@ class Window(QMainWindow):
         """Initializer."""
         super().__init__(parent)
         self.setWindowTitle("Logic Nodes")
-        self.resize(400,200)
+        self.resize(800,800)
         self.centralWidget = QLabel("Hello, World")
         self.centralWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         self.setCentralWidget(self.centralWidget)
         self._createActions()
         self._createMenuBar()
+        self._sidePanel()
         # self._createToolBars()
         self._createContextMenu()
         
@@ -43,6 +42,7 @@ class Window(QMainWindow):
             editMenu.addAction(self.pasteAction)
             editMenu.addAction(self.deleteAction)
             windowMenu = menuBar.addMenu("&Window")
+            # nodes =
             
     def _createToolBars(self):
         #Using a title
@@ -86,6 +86,34 @@ class Window(QMainWindow):
         self.centralWidget.addAction(self.copyAction)
         self.centralWidget.addAction(self.pasteAction)
         
+    def _sidePanel(self):
+        self.sidePanel = QDockWidget("Nodes", self)
+        self.nodesList = QListWidget()
+        node_input = QListWidgetItem(QIcon(":side-input.svg"), "Input")
+        self.nodesList.addItem(node_input)
+        node_output = QListWidgetItem(QIcon(":side-output.svg"), "Output")
+        self.nodesList.addItem(node_output)
+        logic_and = QListWidgetItem(QIcon(":side-and.svg"), "And")
+        self.nodesList.addItem(logic_and)
+        logic_or = QListWidgetItem(QIcon(":side-or.svg"), "Or")
+        self.nodesList.addItem(logic_or)
+        logic_not = QListWidgetItem(QIcon(":side-not.svg"), "Not")
+        self.nodesList.addItem(logic_not)
+        logic_nor = QListWidgetItem(QIcon(":side-nor.svg"), "Nor")
+        self.nodesList.addItem(logic_nor)
+        logic_nand = QListWidgetItem(QIcon(":side-nand.svg"), "Nand")
+        self.nodesList.addItem(logic_nand)
+        logic_xnor = QListWidgetItem(QIcon(":side-xnor.svg"), "Xnor")
+        self.nodesList.addItem(logic_xnor)
+        logic_xor = QListWidgetItem(QIcon(":side-xor.svg"), "Xor")
+        self.nodesList.addItem(logic_xor)
+        
+        
+        
+        
+        self.sidePanel.setWidget(self.nodesList)
+        self.sidePanel.setFloating(False)
+        self.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, self.sidePanel)
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
